@@ -13,8 +13,7 @@ export const profile = {
   bio:
     "I’m a Kolkata-based Graphic Designer & UI/UX Designer — a visual storyteller crafting brand identities, digital campaigns, and user interfaces that connect deeply and spark creativity. Over the last four years, I’ve helped companies build their digital presence from logo and print to web and product UI — blending strategy with craft to make every touchpoint memorable.",
   phone: '+91 8001316145',
-  // TODO: confirm correct email — do not invent; live site shows "deepchakraborty@gmailcom" (missing dot) and link points to designer@example.com
-  email: 'TODO@example.com',
+  email: 'deepchakraborty431@gmail.com',
   // TODO: replace all social URLs with real profile links (currently generic homepages)
   socials: {
     x: 'https://x.com',
