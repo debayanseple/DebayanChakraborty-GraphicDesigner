@@ -1,0 +1,275 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.045) 1px, transparent 1px),
+    radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.9), transparent 55%);
+  background-size: 28px 28px, 28px 28px, 100% 100%;
+  color: var(--ink);
+  padding-top: var(--nav-h);
+  overflow: hidden;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  padding-bottom: clamp(5rem, 10vw, 8rem);
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(26, 26, 26, 0.55);
+  margin-bottom: 1rem;
+}
+
+.hero-name {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.6rem;
+  color: var(--orange);
+  font-weight: 600;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 9.5vw, 7.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.4rem;
+}
+
+.hero-title-line {
+  display: block;
+  position: relative;
+  width: fit-content;
+}
+
+.ellipse-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.ellipse-svg {
+  position: absolute;
+  inset: -12% -8%;
+  width: 116%;
+  height: 124%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.ellipse-svg path {
+  fill: none;
+  stroke: var(--orange);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: draw-ellipse 1.6s var(--ease) 0.6s forwards;
+}
+
+@keyframes draw-ellipse {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.scribble-letter {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  background: repeating-linear-gradient(
+      -45deg,
+      var(--pink) 0 3px,
+      transparent 3px 6px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      var(--pink) 0 2px,
+      transparent 2px 5px
+    );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.hero-tagline {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(26, 26, 26, 0.72);
+  max-width: 34ch;
+  margin-bottom: 1.2rem;
+}
+
+.hero-disciplines {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(26, 26, 26, 0.6);
+  margin-bottom: 2rem;
+}
+
+.hero-disciplines .sep {
+  color: var(--orange);
+}
+
+.hero-cta {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.hero .btn-ghost {
+  border-color: rgba(26, 26, 26, 0.3);
+  color: var(--ink);
+}
+
+.hero .btn-ghost:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+/* Portrait */
+.hero-portrait-wrap {
+  position: relative;
+  justify-self: center;
+  width: min(340px, 78vw);
+}
+
+.hero-portrait {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 10px solid #fff;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.22),
+    0 2px 0 rgba(0, 0, 0, 0.06);
+  transform: rotate(3deg);
+  background: #ddd;
+}
+
+.washi {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+  width: 120px;
+  height: 32px;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 216, 74, 0.85) 0 10px,
+    rgba(255, 122, 26, 0.75) 10px 20px
+  );
+  opacity: 0.92;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  z-index: 3;
+}
+
+/* Floating doodles — outer layer handles parallax, inner handles bob */
+.hero-doodle {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.hero-doodle-inner {
+  display: block;
+}
+
+.doodle-star svg,
+.doodle-spark svg,
+.doodle-burst svg,
+.doodle-scribble svg {
+  display: block;
+}
+
+.hero-hi {
+  z-index: 4;
+}
+
+@media (max-width: 900px) {
+  .hero-hi {
+    top: 14% !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+
+  .hero-doodle {
+    opacity: 0.5;
+  }
+}
+
+/* Torn paper edge — code-based textured medium-shadow rip */
+.torn-edge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  width: 100%;
+  height: clamp(56px, 9vw, 110px);
+  z-index: 3;
+  display: block;
+  pointer-events: none;
+  filter: drop-shadow(0 -6px 10px rgba(0, 0, 0, 0.32))
+    drop-shadow(0 -2px 4px rgba(0, 0, 0, 0.18));
+}
+
+.torn-edge .torn-shadow {
+  fill: var(--bg-dark);
+}
+
+.torn-edge .torn-grain {
+  fill: #fff;
+  opacity: 0.08;
+}
+
+.torn-edge .torn-grain path {
+  fill: #fff;
+}
+
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 2rem;
+  }
+
+  .hero-title-line,
+  .ellipse-wrap {
+    margin-inline: auto;
+  }
+
+  .hero-tagline {
+    margin-inline: auto;
+  }
+
+  .hero-disciplines,
+  .hero-cta {
+    justify-content: center;
+  }
+
+  .hero-portrait-wrap {
+    order: -1;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
+}

@@ -1,0 +1,37 @@
+:root {
+  /* Accent palette */
+  --orange: #ff7a1a;
+  --pink: #ff3d8b;
+  --blue: #2bb8ff;
+  --yellow: #ffd84a;
+  --green: #3ddc84;
+
+  /* Paper (light) */
+  --paper: #f4f1ea;
+  --paper-soft: #efeae0;
+  --ink: #1a1a1a;
+
+  /* Dark body */
+  --bg-dark: #2b2b2b;
+  --bg-darker: #1f1f1f;
+  --surface: #323232;
+  --surface-2: #3a3a3a;
+  --line: rgba(255, 255, 255, 0.08);
+  --text: #f2f0eb;
+  --text-dim: #b5b1a8;
+
+  /* Type */
+  --font-display: 'Abril Fatface', 'Playfair Display', serif;
+  --font-body: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Layout */
+  --nav-h: 72px;
+  --radius: 18px;
+  --radius-sm: 12px;
+  --container: 1160px;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

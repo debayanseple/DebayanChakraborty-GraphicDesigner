@@ -1,0 +1,82 @@
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+.service-card {
+  position: relative;
+  background: linear-gradient(160deg, var(--surface), var(--bg-darker));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(1.6rem, 3vw, 2.2rem);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease),
+    border-color 0.35s var(--ease);
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    600px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 122, 26, 0.12),
+    transparent 45%
+  );
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+}
+
+.service-card:hover {
+  border-color: rgba(255, 122, 26, 0.4);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 122, 26, 0.15);
+}
+
+.service-card:hover::after {
+  opacity: 1;
+}
+
+.service-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--orange);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.service-title {
+  font-size: 1.6rem;
+  margin-bottom: 1.1rem;
+}
+
+.service-items {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.service-items li {
+  position: relative;
+  padding-left: 1.2rem;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.service-items li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--pink);
+  font-size: 0.7rem;
+  top: 0.3rem;
+}
+
+/* Bento — equal cards on all viewports (clean grid, no holes across filters) */
+@media (max-width: 700px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,175 @@
+.edu-skills-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.edu-card {
+  background: linear-gradient(160deg, var(--surface), var(--bg-darker));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(1.6rem, 3vw, 2.2rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.edu-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(var(--orange), var(--pink));
+}
+
+.edu-period {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--orange);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.edu-degree {
+  font-size: 1.35rem;
+  margin-bottom: 0.6rem;
+}
+
+.edu-school {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+/* Tools */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tool-tile {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 1rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
+  transform-style: preserve-3d;
+}
+
+.tool-tile:hover {
+  transform: translateY(-6px) rotateX(6deg) rotateY(-6deg);
+  border-color: rgba(43, 184, 255, 0.45);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+}
+
+.tool-ring {
+  position: relative;
+  width: 54px;
+  height: 54px;
+}
+
+.tool-ring svg {
+  transform: rotate(-90deg);
+}
+
+.tool-ring .ring-bg {
+  stroke: rgba(255, 255, 255, 0.1);
+}
+
+.tool-ring .ring-fg {
+  stroke: var(--blue);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s var(--ease);
+}
+
+.tool-icon {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.tool-icon-img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  background: transparent;
+  border-radius: 8px;
+  padding: 0;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+}
+
+.tool-name {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: var(--text-dim);
+}
+
+.tool-placeholder-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--yellow);
+}
+
+/* Skill chips */
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skill-chip {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  color: var(--text);
+  transition: border-color 0.25s, color 0.25s, transform 0.25s;
+}
+
+.skill-chip:hover {
+  border-color: var(--yellow);
+  color: var(--yellow);
+  transform: translateY(-2px);
+}
+
+.subhead {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+  .edu-skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

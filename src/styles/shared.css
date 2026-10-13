@@ -1,0 +1,111 @@
+/* ---------- Custom cursor ---------- */
+.cursor-dot,
+.cursor-ring {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--orange);
+  mix-blend-mode: difference;
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(255, 122, 26, 0.65);
+  transition: width 0.25s var(--ease), height 0.25s var(--ease),
+    border-color 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+.cursor-ring.is-hover {
+  width: 58px;
+  height: 58px;
+  border-color: var(--pink);
+  background: rgba(255, 61, 139, 0.08);
+}
+
+/* ---------- Sticker ---------- */
+.sticker {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  user-select: none;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.25));
+}
+
+.sticker-face {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.sticker-label {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  background: var(--yellow);
+  color: #1a1a1a;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 2px solid #1a1a1a;
+  box-shadow: 3px 3px 0 #1a1a1a;
+}
+
+/* ---------- Marquee ---------- */
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 6%,
+    #000 94%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 6%,
+    #000 94%,
+    transparent
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 2.5rem;
+  animation: marquee-scroll var(--marquee-duration, 30s) linear infinite;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+}
