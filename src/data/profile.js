@@ -31,5 +31,5 @@ export const profile = {
     { label: 'Projects', href: '#projects' },
     { label: 'Contact', href: '#contact' },
   ],
-  copyright: '© 2025 Debayan Chakraborty. All rights reserved.',
+  copyright: `© ${new Date().getFullYear()} Debayan Chakraborty. All rights reserved.`,
 };

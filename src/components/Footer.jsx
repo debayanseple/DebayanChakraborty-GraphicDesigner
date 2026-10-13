@@ -27,7 +27,7 @@ export default function Footer() {
 
       <footer className="footer">
         <div className="container footer-inner">
-          <p className="footer-copy">{profile.copyright}</p>
+          <p className="footer-copy">© {new Date().getFullYear()} Debayan Chakraborty. All rights reserved.</p>
           <span className="footer-brand" aria-hidden="true">
             {profile.firstName} ✦ {profile.title}
           </span>
