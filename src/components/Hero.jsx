@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { profile } from '../data/profile';
 import Sticker from './Sticker';
@@ -54,13 +54,23 @@ function ScribbleDoodle() {
 
 export default function Hero() {
   const ref = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 900px)');
+    const onChange = (e) => setIsMobile(e.matches);
+    setIsMobile(mq.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
   });
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, -140]);
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  // Keep parallax subtle/disabled on mobile for smoother scrolling & less jank
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, isMobile ? -20 : -80]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, isMobile ? -24 : -140]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, isMobile ? -12 : -50]);
 
   const fadeUp = {
     hidden: { opacity: 0, y: 28 },
@@ -123,7 +133,7 @@ export default function Hero() {
       <Sticker label="Hi!" top="18%" left="42%" rotate={-12} className="hero-hi" />
 
       <div className="container hero-inner">
-        <div>
+        <div className="hero-copy">
           <p className="hero-eyebrow">Portfolio / {new Date().getFullYear()}</p>
 
           <p className="hero-name">{profile.name}</p>
@@ -170,6 +180,11 @@ export default function Hero() {
             src={profile.portrait}
             alt={`${profile.name}, graphic designer`}
             loading="eager"
+            decoding="async"
+            fetchPriority="high"
+            width="680"
+            height="850"
+            sizes="(max-width: 600px) 88vw, (max-width: 900px) 84vw, 340px"
           />
           <Sticker emoji="👽" top="-4%" right="-8%" rotate={14} />
           <Sticker emoji="😄" bottom="6%" left="-10%" rotate={-10} />
