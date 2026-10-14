@@ -72,7 +72,7 @@ export const projects = [
     category: 'Graphic Design',
     description:
       'Poster and 8×12 ft stage backdrop series for a North Kolkata para puja — Bengali headline type, sindoor red and dhak motifs, QR for chanda donations, print-ready with bleed for local flex press.',
-    image: 'https://picsum.photos/seed/pujo-poster/800/533',
+    image: '/projects/pujo-posters-2024.jpg',
     tools: ['Adobe Illustrator', 'Adobe Photoshop', 'InDesign'],
   },
   {
@@ -81,7 +81,7 @@ export const projects = [
     category: 'Graphic Design',
     description:
       '10×4 ft flex and 6 ft standee for a Kolkata mishti cloud kitchen — hero rosogolla/sandesh macros, bilingual wordmark, price strip and Swiggy/Zomato QR for high-street visibility.',
-    image: 'https://picsum.photos/seed/sweets-flex/800/533',
+    image: '/projects/khaas-mithaas-flex.jpg',
     tools: ['Adobe Illustrator', 'Adobe Photoshop', 'InDesign'],
   },
   {
@@ -90,7 +90,7 @@ export const projects = [
     category: 'Graphic Design',
     description:
       '8×6 ft haat banner and yardage tag system for a Khadi handloom collective — jamdani border patterns, hand-stamped textures and loom photography for a tactile, earthy appeal.',
-    image: 'https://picsum.photos/seed/handloom-banner/800/533',
+    image: '/projects/rangbhoomi-haat-banner.jpg',
     tools: ['Adobe Illustrator', 'Adobe Photoshop', 'InDesign'],
   },
   {
@@ -99,7 +99,7 @@ export const projects = [
     category: 'Graphic Design',
     description:
       '20×10 ft road hoarding and bus-shelter poster for a Darjeeling organic tea estate — first-flush badge, estate altitude story and garden-to-cup CTA built for highway readability.',
-    image: 'https://picsum.photos/seed/tea-hoarding/800/533',
+    image: '/projects/misty-tea-hoarding.jpg',
     tools: ['Adobe Illustrator', 'Adobe Photoshop', 'InDesign'],
   },
   {
@@ -108,7 +108,7 @@ export const projects = [
     category: 'Graphic Design',
     description:
       'A2 posters and 1080×1350 social banners for an Ayurveda mela at Eco Park, New Town — herb macro photography, dosha quiz QR and muted earth palette for print and Instagram.',
-    image: 'https://picsum.photos/seed/ayur-mela/800/533',
+    image: '/projects/ayur-roots-mela-poster.jpg',
     tools: ['Adobe Illustrator', 'Adobe Photoshop', 'Canva'],
   },
   {
@@ -117,7 +117,7 @@ export const projects = [
     category: 'Graphic Design',
     description:
       'Hoarding and twin conference standees for SEPLE’s tech park — security-lab imagery, trust-blue palette, Zoho Creator badge and expo wayfinding arrows for quick scanning.',
-    image: 'https://picsum.photos/seed/seple-hoarding/800/533',
+    image: '/projects/seple-tech-hoarding.jpg',
     tools: ['Adobe Illustrator', 'Adobe Photoshop', 'InDesign'],
   },
 ];
