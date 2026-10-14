@@ -184,7 +184,7 @@ export default function Hero() {
             fetchPriority="high"
             width="680"
             height="850"
-            sizes="(max-width: 600px) 88vw, (max-width: 900px) 84vw, 340px"
+            sizes="(max-width: 380px) 72vw, (max-width: 600px) 68vw, (max-width: 900px) 64vw, 340px"
           />
           <Sticker emoji="👽" top="-4%" right="-8%" rotate={14} />
           <Sticker emoji="😄" bottom="6%" left="-10%" rotate={-10} />

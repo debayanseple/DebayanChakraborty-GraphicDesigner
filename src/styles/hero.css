@@ -253,7 +253,7 @@
 
   .hero-portrait-wrap {
     order: 2;
-    width: min(360px, 84vw);
+    width: min(280px, 64vw);
     margin-inline: auto;
     margin-top: 0.25rem;
   }
@@ -350,13 +350,13 @@
   }
 
   .hero-portrait-wrap {
-    width: min(320px, 88vw);
+    width: min(260px, 68vw);
   }
 
   .hero-portrait {
-    border-width: 8px;
-    transform: rotate(2deg);
-    aspect-ratio: 4 / 4.8;
+    border-width: 7px;
+    transform: rotate(1.5deg);
+    aspect-ratio: 4 / 5;
   }
 
   .washi {
@@ -392,7 +392,7 @@
   }
 
   .hero-portrait-wrap {
-    width: 92vw;
+    width: min(240px, 72vw);
   }
 
   .torn-edge {
